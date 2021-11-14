@@ -271,14 +271,14 @@ export function RawList<T>(props: ListProps<T>, ref: React.Ref<ListRef>) {
       }
     }
 
-    componentRef.current.addEventListener('wheel', onRawWheel);
-    componentRef.current.addEventListener('DOMMouseScroll', onFireFoxScroll as any);
-    componentRef.current.addEventListener('MozMousePixelScroll', onMozMousePixelScroll);
+    componentRef.current?.addEventListener('wheel', onRawWheel);
+    componentRef.current?.addEventListener('DOMMouseScroll', onFireFoxScroll as any);
+    componentRef.current?.addEventListener('MozMousePixelScroll', onMozMousePixelScroll);
 
     return () => {
-      componentRef.current.removeEventListener('wheel', onRawWheel);
-      componentRef.current.removeEventListener('DOMMouseScroll', onFireFoxScroll as any);
-      componentRef.current.removeEventListener('MozMousePixelScroll', onMozMousePixelScroll as any);
+      componentRef.current?.removeEventListener('wheel', onRawWheel);
+      componentRef.current?.removeEventListener('DOMMouseScroll', onFireFoxScroll as any);
+      componentRef.current?.removeEventListener('MozMousePixelScroll', onMozMousePixelScroll as any);
     };
   }, [useVirtual]);
 
